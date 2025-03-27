@@ -1,0 +1,58 @@
+
+-----------  Install dependencies:
+
+sudo apt update
+sudo apt install -y software-properties-common
+
+-----------  Add the deadsnakes PPA (if on Ubuntu):
+
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+
+
+-----------  Install Python 3.10:
+sudo apt install python3.10 python3.10-venv python3.10-distutils
+
+-----------  Check the installed version:
+python3.10 --version
+
+
+----------- Create a virtual environment (recommended)
+
+python3.10 -m venv Langgraph_chatbot
+source Langgraph_chatbot/bin/activate
+
+----------- Install the Azure Speech SDK
+
+pip install azure-cognitiveservices-speech
+
+----------- Langchain / Langgraph
+
+pip install requests langchain-core langchain-openai langgraph
+
+
+----------- Audio Handling
+
+pip install sounddevice numpy elevenlabs pydub
+sudo apt install ffmpeg   # Debian/Ubuntu
+
+
+----------- FastApi
+
+pip install fastapi uvicorn pandas
+
+
+
+----------- Run the script:
+
+Usage :chmod +x setup_env.sh
+./setup_env.sh
+
+
+
+------------- To run the APIs
+uvicorn APIs:app --port 8002 --reload
+
+
+-------------- To run the main file 
+python main.py
